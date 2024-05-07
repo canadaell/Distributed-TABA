@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "grpc.AddProductsService";
+option java_outer_classname = "AddProductsProto";
+
+service AddProductsService {
+  rpc AddProducts (stream AddProductRequest) returns (AddProductResponse) {}
+}
+
+message AddProductRequest {
+  Product product = 1;
+}
+
+message AddProductResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message Product {
+  int32 id = 1;
+  string name = 2;
+  string description = 3;
+  float price = 4;
+  int32 quantity = 5;
+}

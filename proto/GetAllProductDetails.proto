@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "grpc.GetAllProductDetailsService";
+option java_outer_classname = "GetAllProductDetailsProto";
+
+service GetAllProductDetailsService {
+  rpc GetProductDetails (GetProductDetailsRequest) returns (GetProductDetailsResponse) {}
+}
+
+message GetProductDetailsRequest {
+  int32 id= 1;
+}
+
+message GetProductDetailsResponse {
+  int32 id = 1;
+  string name = 2;
+  string description = 3;
+  float price = 4;
+  int32 quantity = 5;
+}
